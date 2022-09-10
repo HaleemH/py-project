@@ -18,8 +18,12 @@ def match():
 
   choice = input('Type you answer ( Rock, Paper, Scissors): ')
   print(f'You  chose: {choice}')
-  cpu_choice = random.choice(['rock','paper','scissors'])
-  win(choice, cpu_choice)
+  if choice.lower() == "rock" or choice.lower() == "paper" or choice.lower() == "scissors": 
+    cpu_choice = random.choice(['rock','paper','scissors'])
+    win(choice, cpu_choice)
+  else:
+    print("Please choose between: Rock | Paper | Scissors")
+    match()
 
 def win(user,cpu):
     if (user == 'rock' and cpu == 'scissors') or (user == 'scissors' and cpu == 'paper') or (user == 'paper' and cpu == 'rock'):
